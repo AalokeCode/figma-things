@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* @shared-css */
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <main class="main">
+        <div class="section">
+          <div class="section-title">Selection <span class="meta" id="selMeta"></span></div>
+          <div class="hint" id="selText">Select a comp to split</div>
+        </div>
+
+        <div class="section" id="gridSection">
+          <div class="section-title">Grid</div>
+          <div class="row">
+            <label for="cols">Columns</label>
+            <select class="select" id="cols"></select>
+          </div>
+          <div class="row">
+            <label for="rows">Rows</label>
+            <select class="select" id="rows"></select>
+          </div>
+          <div class="row">
+            <label for="method">Bleed</label>
+            <select class="select" id="method">
+              <option value="auto">Auto</option>
+              <option value="extend">Extend layers</option>
+              <option value="ai">AI expand image</option>
+            </select>
+          </div>
+          <div class="hint" id="canvasHint"></div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="status" id="status"></div>
+        <button class="btn" id="go" disabled>Select a comp</button>
+      </footer>
+    </div>
+    <script>
+      /* @ui-js */
+    </script>
+  </body>
+</html>

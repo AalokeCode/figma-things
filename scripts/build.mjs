@@ -5,7 +5,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
-const PLUGINS = ['font-replacer', 'print', 'processor'];
+const PLUGINS = ['font-replacer', 'print', 'processor', 'insta-grid'];
 const watch = process.argv.includes('--watch');
 
 function writeUiHtml(dir, js) {
