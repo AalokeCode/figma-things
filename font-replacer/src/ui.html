@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* @shared-css */
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <main class="main">
+        <div class="section">
+          <div class="section-title">
+            Replace fonts <span class="meta" id="scope">Loading…</span>
+          </div>
+          <div class="row">
+            <label for="from">Replace</label>
+            <select class="select" id="from">
+              <option value="">All families</option>
+            </select>
+          </div>
+          <div class="row">
+            <label for="to">With</label>
+            <input
+              class="input"
+              id="to"
+              list="families"
+              placeholder="Font family"
+              autocomplete="off"
+            />
+          </div>
+          <datalist id="families"></datalist>
+          <div class="hint">Weights are kept; missing styles use the nearest weight.</div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="status" id="out"></div>
+        <button class="btn" id="go" disabled>Replace</button>
+      </footer>
+    </div>
+    <script>
+      /* @ui-js */
+    </script>
+  </body>
+</html>

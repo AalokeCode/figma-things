@@ -1,0 +1,26 @@
+{
+  "name": "figma-plugins",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Font Replacer, Print and Processor — local Figma plugins sharing one UI kit.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "watch": "node scripts/build.mjs --watch",
+    "typecheck": "tsc -p tsconfig.code.json && tsc -p tsconfig.ui.json",
+    "lint": "eslint \"*/src/**/*.ts\" \"shared/**/*.ts\"",
+    "format": "prettier --write \"*/src/**/*.{ts,html}\" \"shared/**/*.{ts,css}\"",
+    "check": "npm run typecheck && npm run lint && npm run build"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2"
+  },
+  "devDependencies": {
+    "@figma/plugin-typings": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "esbuild": "^0.24.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  }
+}

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* @shared-css */
+      .frame-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        min-height: 24px;
+        align-items: center;
+      }
+      .frame-row span:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .frame-row span:last-child {
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <nav class="tabs" id="tabs">
+        <button data-value="insert">Insert</button>
+        <button data-value="export">Export</button>
+      </nav>
+
+      <main class="main">
+        <!-- INSERT -->
+        <section id="insertView">
+          <div class="section">
+            <div class="section-title">Frame</div>
+            <div class="row">
+              <label for="preset">Preset</label>
+              <select class="select" id="preset"></select>
+            </div>
+            <div class="row">
+              <label>Size</label>
+              <div class="pair">
+                <div class="num">
+                  <span>W</span><input class="input" id="w" inputmode="decimal" />
+                </div>
+                <div class="num">
+                  <span>H</span><input class="input" id="h" inputmode="decimal" />
+                </div>
+                <button class="icon-btn" id="swap" title="Swap orientation">
+                  <i data-icon="swap"></i>
+                </button>
+              </div>
+            </div>
+            <div class="row">
+              <label for="unit">Units</label>
+              <select class="select" id="unit">
+                <option value="mm">Millimetres</option>
+                <option value="cm">Centimetres</option>
+                <option value="in">Inches</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="dpi">Resolution</label>
+              <select class="select" id="dpi"></select>
+            </div>
+            <div class="hint" id="pxOut"></div>
+          </div>
+        </section>
+
+        <!-- EXPORT -->
+        <section id="exportView" class="hidden">
+          <div class="section">
+            <div class="section-title">Selection <span class="meta" id="selCount"></span></div>
+            <div id="frames"></div>
+          </div>
+          <div class="section">
+            <div class="section-title">Output</div>
+            <div class="row">
+              <label for="outDpi">Resolution</label>
+              <select class="select" id="outDpi"></select>
+            </div>
+            <div class="row">
+              <label for="mode">Color</label>
+              <select class="select" id="mode">
+                <option value="rgb">RGB</option>
+                <option value="cmyk">CMYK</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="format">Format</label>
+              <select class="select" id="format"></select>
+            </div>
+            <div class="row" id="srcRow">
+              <label for="srcDpi" title="DPI assumed for frames not created by this plugin"
+                >Source</label
+              >
+              <select class="select" id="srcDpi"></select>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="status" id="status"></div>
+        <button class="btn" id="go">Insert frame</button>
+      </footer>
+    </div>
+    <script>
+      /* @ui-js */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* @shared-css */
+      .file-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 32px;
+      }
+      .file-row .hint {
+        flex: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .over {
+        background: #f0f8ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <main class="main">
+        <div class="section">
+          <div class="section-title">Template</div>
+          <div class="hint" id="template">Select a frame on the canvas</div>
+        </div>
+
+        <div class="section">
+          <div class="section-title">Data <span class="meta" id="dataMeta"></span></div>
+          <div class="file-row">
+            <button class="btn secondary" id="pick">Choose file…</button>
+            <span class="hint" id="fileName">CSV, TSV or XLSX</span>
+            <input type="file" id="file" accept=".csv,.tsv,.txt,.xlsx" hidden />
+          </div>
+          <div class="row hidden" id="sheetRow">
+            <label for="sheet">Sheet</label>
+            <select class="select" id="sheet"></select>
+          </div>
+        </div>
+
+        <div class="section hidden" id="layersSection">
+          <div class="section-title">Layers <span class="meta" id="mappedMeta"></span></div>
+          <div id="mapping"></div>
+        </div>
+
+        <div class="section hidden" id="layoutSection">
+          <div class="section-title">Layout</div>
+          <div class="row">
+            <label>Grid</label>
+            <div class="pair">
+              <select class="select" id="perRow" title="Copies per row"></select>
+              <div class="num" title="Gap">
+                <span>G</span><input class="input" id="gap" value="80" inputmode="numeric" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <label for="nameCol">Name by</label>
+            <select class="select" id="nameCol"></select>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="status" id="status"></div>
+        <button class="btn" id="go" disabled>Generate</button>
+      </footer>
+    </div>
+    <script>
+      /* @ui-js */
+    </script>
+  </body>
+</html>
